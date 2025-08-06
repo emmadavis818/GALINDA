@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: GALINDA
+Version: 0.0.1
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: ffmpeg
+Requires-Dist: h5py
+Requires-Dist: glob
+Dynamic: license-file
