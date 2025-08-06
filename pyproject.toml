@@ -11,5 +11,5 @@ dependencies = [
  "matplotlib",
  "ffmpeg",
  "h5py",
- "glob",
+ "glob"
 ]

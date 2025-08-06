@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+GALINDA/__init__.py
+GALINDA.egg-info/PKG-INFO
+GALINDA.egg-info/SOURCES.txt
+GALINDA.egg-info/dependency_links.txt
+GALINDA.egg-info/requires.txt
+GALINDA.egg-info/top_level.txt
