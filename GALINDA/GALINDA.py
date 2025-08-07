@@ -29,7 +29,7 @@ class Bubble(object):
         self.ind = ind 
 
         
-    def histogram(self):
+    def histogram(self,i):
         """
         Creates attributes for 2D histograms
         
