@@ -11,8 +11,8 @@ import sys
 sys.path.insert(0, os.path.abspath('../GALINDA/'))
 
 project = 'GALINDA'
-copyright = '2025, Edward, Emma, & Fofie'
-author = 'Edward, Emma, & Fofie'
+copyright = '2025, Emma Davis, Patricia Fofie, & Edward Skrabacz'
+author = 'Emma Davis, Patricia Fofie, & Edward Skrabacz'
 root_doc = 'index'
 release = 'v0.0.1-alpha'
 
@@ -23,7 +23,6 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 
 # -- Options for HTML output -------------------------------------------------
