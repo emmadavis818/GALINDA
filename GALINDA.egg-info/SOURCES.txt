@@ -8,3 +8,5 @@ GALINDA.egg-info/SOURCES.txt
 GALINDA.egg-info/dependency_links.txt
 GALINDA.egg-info/requires.txt
 GALINDA.egg-info/top_level.txt
+GALINDA/Tests/test_import.py
+GALINDA/Tests/test_plot.py
