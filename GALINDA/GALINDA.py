@@ -24,7 +24,7 @@ class Bubble(object):
         if "*" not in self.path:
             self.path += "*"
             
-        self.fnames = glob.glob(path + "*")
+        self.fnames = sorted(glob.glob(path + "*"))
         self.key = key
         self.ind = ind 
 
