@@ -10,3 +10,8 @@ from GALINDA import GALINDA
 
 # %%
 gal = GALINDA.Bubble("animation_data/", "m11h_star_coordinates")
+# %%
+hasattr(gal,"path")
+hasattr(gal,"fnames")
+hasattr(gal,"key")
+hasattr(gal,"ind")
