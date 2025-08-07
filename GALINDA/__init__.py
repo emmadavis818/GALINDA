@@ -1,1 +1,1 @@
-print("you found our package!")
+print("Thank you for installing GALINDA!")
