@@ -6,5 +6,4 @@ Requires-Dist: numpy
 Requires-Dist: matplotlib
 Requires-Dist: ffmpeg
 Requires-Dist: h5py
-Requires-Dist: glob
 Dynamic: license-file
