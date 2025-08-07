@@ -38,7 +38,7 @@ class Bubble(object):
                binY (array): Histogram's y-values for bins
             
         """
-        self.to_plot,self.binX,self.binY = np.histogram2d(self.x,self.y, bins = self.bins)
+        self.to_plot, self.binX, self.binY = np.histogram2d(self.x,self.y, bins = self.bins)
         
         
     def plot(self,i):
