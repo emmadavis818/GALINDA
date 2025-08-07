@@ -33,18 +33,6 @@ class Bubble(object):
         """
         Creates attributes for 2D histograms
         
-        Attrs: to_plot (array): Array of values to plot
-               binX (array): Histogram's x-values for bins
-               binY (array): Histogram's y-values for bins
-            
-        """
-        self.to_plot, self.binX, self.binY = np.histogram2d(self.x,self.y, bins = self.bins)
-        
-        
-    def plot(self,i):
-        """
-        Function that plots a 2D histogram of data values
-        
         Args: i (int): The index for which timestep to plot
         
         Attrs: f (h5py directory): An h5py directory of all the data in the i-th timestep
@@ -52,13 +40,26 @@ class Bubble(object):
                x (array): The x values of the simulation
                y (array): The y values of the simulation
                bins (array): The number of bins to put the data into (for a size N array, we have round(sqrt(N))/2)
-               
+               to_plot (array): Array of values to plot
+               binX (array): Histogram's x-values for bins
+               binY (array): Histogram's y-values for bins
+            
         """
         self.f = h5py.File(self.fnames[i])
         self.data = np.array(self.f[self.key])
         self.x,self.y = self.data[:,self.ind[0]], self.data[:,self.ind[1]]
         self.bins = int(np.sqrt(len(self.x))/2)
-        self.histogram()
+        self.to_plot,self.binX,self.binY = np.histogram2d(self.x,self.y, bins = self.bins)
+        
+        
+    def plot(self,i):
+        """
+        Function that plots a 2D histogram of data values
+        
+        Args: i (int): The index for which timestep to plot
+        """
+        if not hasattr(self, "to_plot"):
+            self.histogram(i)
         
         if not hasattr(self, "fig"):
             self.fig, self.ax = plt.subplots()
