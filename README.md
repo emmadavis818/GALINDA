@@ -5,9 +5,9 @@ GALINDA is a Galaxy Image N-Body Data Animator. Galinda is designed to provide y
 
 Inputs: A folder containing HDF5 files of particle position data for a given snapshot or time-step. 
 
-Package Requirements: 
+Package Requirements: numpy, matplotlib, h5py, ffmpeg
 
 Any comments, questions, or concerns, please reach out to the developers: 
-emma@college.edu
+emmadavis818@.gmail.edu
 pfofie@uci.edu
-ed@college.edu
+edward.skrabacz@u.northwestern.edu
