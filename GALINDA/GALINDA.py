@@ -60,6 +60,9 @@ class Bubble(object):
         self.bins = int(np.sqrt(len(self.x))/2)
         self.histogram()
         
+        if not hasattr(self, "fig"):
+            self.fig, self.ax = plt.subplots()
+        
         if not hasattr(self, "im"):
             self.im = plt.imshow(self.to_plot)
         else:
@@ -75,6 +78,22 @@ class Bubble(object):
                ax (Axes): The axes to animate on
                ani (Animation): The animation itself
         """
-       # print(figsize)
         self.fig, self.ax = plt.subplots(figsize = figsize)
         self.ani = animation.FuncAnimation(self.fig, self.plot, np.arange(len(self.fnames)))
+        
+    def save_ani(self,save_file, fps = 5):
+        """
+        Save an animation
+        
+        Args: save_file (string): The name that the user would like to save the animation
+              fps (int): Number of frames per second for the animation
+        
+        """
+        if not hasattr(self, "ani"):
+            self.animate()
+            
+        if save_file[-4:] != ".mp4":
+            save_file += ".mp4"
+            
+        FFwriter = animation.FFMpegWriter(fps=fps)
+        self.ani.save(save_file, writer = FFwriter)
