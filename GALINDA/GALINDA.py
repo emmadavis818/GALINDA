@@ -67,7 +67,22 @@ class Bubble(object):
             self.im = plt.imshow(self.to_plot)
         else:
             self.im.set_data(self.to_plot)
-    
+            
+    def save_plot(self, i, save_file, figsize = (8,8)):
+        """
+        Function that saves a plot of a 2D histogram
+        
+        Args:  save_file (string): The name that the user would like to save the plot
+               i (int): The index for which timestep to plot
+               figsize (tuple): How big to make the images
+        """
+        self.plot(i, figsize)
+        
+        if save_file[-4:] != ".png":
+            save_file += ".png"
+        
+        self.fig.savefig(save_file)
+            
     def animate(self,figsize = (8,8)):
         """
         Animation!
@@ -97,3 +112,50 @@ class Bubble(object):
             
         FFwriter = animation.FFMpegWriter(fps=fps)
         self.ani.save(save_file, writer = FFwriter)
+        
+    def collage(self, i_start = 0, i_end = 1e99, nrows = 1, ncols = 1,figsize = (8,8)):
+        """
+        A collage of images 
+        
+        Args: i_start (int): The index to start the collage with
+              i_end (int): The index to end the collage with
+              nrows (int): How many rows to make the collage
+              ncols (int): How many columns to make the collage
+
+        Attrs: colfig (Figure): The collage Figure
+               colax (np.array(Axes)): An array of Axes objects
+        """
+        
+        if i_end < i_start:
+            raise ValueError("Ending index must not be less than starting index")
+        
+        if nrows * ncols < np.abs(i_end - i_start):
+            raise ValueError("Total number of plots smaller than given indices")
+        
+        i_end = int(np.min([len(self.fnames), i_end]))
+        
+        self.colfig,self.colax = plt.subplots(nrows,ncols, figsize = figsize)
+        self.colax = np.reshape(self.colax, nrows*ncols)
+        
+        for ax_ind, f_ind in enumerate(np.arange(i_start, i_end)):
+            self.histogram(f_ind)
+            self.colax[ax_ind].imshow(self.to_plot)
+            
+    def save_collage(self, save_file, i_start = 0, i_end = 1e99, nrows = 1, ncols = 1, figsize = (8,8)):
+        """
+        Function that saves a plot of a 2D histogram
+        
+        Args: save_file (string): The name that the user would like to save the collapse
+              i_start (int): The index to start the collage with
+              i_end (int): The index to end the collage with
+              nrows (int): How many rows to make the collage
+              ncols (int): How many columns to make the collage
+              figsize (tuple): How big to make the images
+        """
+        self.collage(i_start,i_end,nrows = nrows, ncols = ncols, figsize =  figsize)
+        
+        if save_file[-4:] != ".png":
+            save_file += ".png"
+        
+        self.colfig.savefig(save_file)
+        
