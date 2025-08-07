@@ -1,9 +1,10 @@
-import functools
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.animation as animation
 import glob
 import h5py
+from matplotlib import rc
+rc("animation", html = "html5")
 
 class GALINDA(object):
     """
@@ -12,7 +13,7 @@ class GALINDA(object):
     Args: path (string): File path to a folder of data to animate (files should be hdf5)
           key (string): Data source to be plotted (header of hdf5 file) 
           ind (array): 2D array/list/tuple containing which indices the GALINDA will plot over 
-    
+
     Attrs: fnames (array): A numpy array of filenames to animate
            key (string): Data source to be plotted (header of hdf5 file) 
            ind (array): 2D array/list/tuple containing which indices the GALINDA will plot over
@@ -26,6 +27,7 @@ class GALINDA(object):
         self.fnames = glob.glob(path + "*")
         self.key = key
         self.ind = ind 
+
         
     def histogram(self):
         """
@@ -58,7 +60,10 @@ class GALINDA(object):
         self.bins = int(np.sqrt(len(self.x))/2)
         self.histogram()
         
-        im = plt.imshow(self.to_plot)
+        if not hasattr(self, "im"):
+            self.im = plt.imshow(self.to_plot)
+        else:
+            self.im.set_data(self.to_plot)
     
     def animate(self,figsize = (8,8)):
         """
@@ -70,6 +75,6 @@ class GALINDA(object):
                ax (Axes): The axes to animate on
                ani (Animation): The animation itself
         """
+       # print(figsize)
         self.fig, self.ax = plt.subplots(figsize = figsize)
-        self.ani = animation.FuncAnimation(self.fig, self.animate)
-        
+        self.ani = animation.FuncAnimation(self.fig, self.plot, np.arange(len(self.fnames)))
