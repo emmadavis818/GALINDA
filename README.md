@@ -8,6 +8,6 @@ Inputs: A folder containing HDF5 files of particle position data for a given sna
 Package Requirements: numpy, matplotlib, h5py, ffmpeg
 
 Any comments, questions, or concerns, please reach out to the developers: 
-emmadavis818@.gmail.edu
-pfofie@uci.edu
-edward.skrabacz@u.northwestern.edu
+\n emmadavis818@.gmail.edu
+\n pfofie@uci.edu
+\n edward.skrabacz@u.northwestern.edu
