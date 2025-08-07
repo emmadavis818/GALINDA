@@ -6,7 +6,7 @@ import h5py
 from matplotlib import rc
 rc("animation", html = "html5")
 
-class GALINDA(object):
+class Bubble(object):
     """
     Galinda is a tool for baddies who wish to animate n-body and hydrodynamical simulations.
     
