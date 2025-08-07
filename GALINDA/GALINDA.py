@@ -58,8 +58,7 @@ class Bubble(object):
         
         Args: i (int): The index for which timestep to plot
         """
-        if not hasattr(self, "to_plot"):
-            self.histogram(i)
+        self.histogram(i)
         
         if not hasattr(self, "fig"):
             self.fig, self.ax = plt.subplots()
