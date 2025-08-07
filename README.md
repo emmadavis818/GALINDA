@@ -1,4 +1,13 @@
-# CodeAstro-Group11
+# GALINDA
 Group 11's PyPI Package, CodeAstro 2025
 
-GALINDA is a Galaxy Image N-Body Data Animator
+GALINDA is a Galaxy Image N-Body Data Animator. Galinda is designed to provide you with 2D Histogram images of particles in your simulations and produce an animation of these histograms. This function is useful for obtaining a quick overall view of your simulated astronomical object and its evolution over simulation time-steps.
+
+Inputs: A folder containing HDF5 files of particle position data for a given snapshot or time-step. 
+
+Package Requirements: 
+
+Any comments, questions, or concerns, please reach out to the developers: 
+emma@college.edu
+pfofie@uci.edu
+ed@college.edu
