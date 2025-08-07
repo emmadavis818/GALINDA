@@ -2,4 +2,3 @@ numpy
 matplotlib
 ffmpeg
 h5py
-glob
