@@ -8,7 +8,7 @@ rc("animation", html = "html5")
 
 class Bubble(object):
     """
-    Bubble contain all the functions for animate n-body and hydrodynamical simulations.
+    Bubble contains all the functions for animating n-body and hydrodynamical simulations.
     
     Args: path (string): File path to a folder of data to animate (files should be hdf5)
           key (string): Data source to be plotted (header of hdf5 file) 

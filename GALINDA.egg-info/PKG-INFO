@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: GALINDA
-Version: 0.0.1
+Version: 0.0.3
 License-File: LICENSE
 Requires-Dist: numpy
 Requires-Dist: matplotlib

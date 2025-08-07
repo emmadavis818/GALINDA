@@ -1,6 +1,7 @@
 LICENSE
 README.md
 pyproject.toml
+GALINDA/GALINDA.py
 GALINDA/__init__.py
 GALINDA.egg-info/PKG-INFO
 GALINDA.egg-info/SOURCES.txt
