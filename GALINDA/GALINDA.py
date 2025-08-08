@@ -131,16 +131,14 @@ class Bubble(object):
         
         i_end = int(np.min([len(self.fnames), i_end]))
         
-        if nrows * ncols < np.abs(i_end - i_start):
-            raise ValueError("Total number of plots smaller than given indices")
-        
-        
         self.colfig,self.colax = plt.subplots(nrows,ncols, figsize = figsize)
         self.colax = np.reshape(self.colax, nrows*ncols)
         
         for ax_ind, f_ind in enumerate(np.arange(i_start, i_end)):
             self.histogram(f_ind)
             self.colax[ax_ind].imshow(self.to_plot)
+            if ax_ind > nrows * ncols or f_ind > len(self.fnames):
+                break
             
     def save_collage(self, save_file, i_start = 0, i_end = 1e99, nrows = 1, ncols = 1, figsize = (8,8)):
         """
