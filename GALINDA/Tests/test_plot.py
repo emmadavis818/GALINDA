@@ -25,4 +25,5 @@ def test_plot():
     return plot
 
 if __name__ == "__main__":
-    test_plot()
+    pl = test_plot()
+    plt.show()
