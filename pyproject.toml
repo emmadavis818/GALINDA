@@ -12,3 +12,11 @@ dependencies = [
  "ffmpeg",
  "h5py"
 ]
+
+authors = [
+  {name = "Emma Davis", email = "edavis43@ur.rochester.edu"},
+  {name = "Patricia Fofie", email = "pfofie@uci.edu"},
+  {name = "Edward Skrabacz", email = "dward.skrabacz@u.northwestern.edu"}
+]
+
+description = "GALINDA is a Galaxy Image N-Body Data Animator. Galinda is designed to provide you with 2D Histogram images of particles in your simulations and produce an animation of these histograms. This function is useful for obtaining a quick overall view of your simulated astronomical object and its evolution over time-steps."
