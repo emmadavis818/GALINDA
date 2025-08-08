@@ -10,10 +10,15 @@ rc("animation", html = "html5")
 from GALINDA import GALINDA
 
 # %%
-gal = GALINDA.Bubble("animation_data/", "m11h_star_coordinates")
+def test_histogram(i):
+    gal = GALINDA.Bubble("animation_data/", "m11h_star_coordinates")
+    plot = gal.histogram(i)
+    assert hasattr(gal,"to_plot") == True
+    assert hasattr(gal,"binX") == True
+    assert hasattr(gal,"binY") == True
 
-gal.histogram(1) #change the input her eto test edge cases
 
-print(len(gal.to_plot))
-print(len(gal.binX))
-print(len(gal.binY))
+    return plot #change the input her eto test edge cases
+
+if __name__ == "__main__":
+    test_histogram(0)
