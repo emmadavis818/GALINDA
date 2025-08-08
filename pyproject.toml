@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "GALINDA"
-version = "1.0.2"
+version = "1.0.3"
 
 dependencies = [
  "numpy",
@@ -20,3 +20,5 @@ authors = [
 ]
 
 description = "GALINDA is a Galaxy Image N-Body Data Animator. Galinda is designed to provide you with 2D Histogram images of particles in your simulations and produce an animation of these histograms. This function is useful for obtaining a quick overall view of your simulated astronomical object and its evolution over time-steps."
+readme = "README.md"
+license = "MIT"
