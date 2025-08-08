@@ -52,7 +52,7 @@ class Bubble(object):
         self.to_plot,self.binX,self.binY = np.histogram2d(self.x,self.y, bins = self.bins)
         
         
-    def plot(self,i):
+    def plot(self,i,figsize = (8,8)):
         """
         Function that plots a 2D histogram of data values
         
@@ -129,10 +129,11 @@ class Bubble(object):
         if i_end < i_start:
             raise ValueError("Ending index must not be less than starting index")
         
+        i_end = int(np.min([len(self.fnames), i_end]))
+        
         if nrows * ncols < np.abs(i_end - i_start):
             raise ValueError("Total number of plots smaller than given indices")
         
-        i_end = int(np.min([len(self.fnames), i_end]))
         
         self.colfig,self.colax = plt.subplots(nrows,ncols, figsize = figsize)
         self.colax = np.reshape(self.colax, nrows*ncols)
